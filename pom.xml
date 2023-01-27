@@ -11,11 +11,11 @@
     </parent>
 
     <groupId>cubox.aero</groupId>
-    <artifactId>cumfa</artifactId>
+    <artifactId>connect</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>cumfa</name>
-    <description>CUBOX K-Face ID Administrator Console</description>
+    <name>connect</name>
+    <description>CUBOX CONNECT</description>
 
     <properties>
         <java.version>11</java.version>
@@ -59,6 +59,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <!-- Lombok -->

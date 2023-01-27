@@ -1,0 +1,29 @@
+ :root {
+  --subbackground: #F4F9FA;
+  --maincolor: #2d2d2d;
+  --subtittle: #1d8eaa;
+  --commentbox: #81989C;
+  --forumbox: #e4ecee;
+  --color: #ffff;
+  --programtext: #767676;
+  --signup-background: #1b474f;
+  --safety-background: #113c43;
+  --footer: #002d35;
+  --signupbtn: #1d8eaa;
+  --circle:  #1d8eaa;
+
+  --comment-box-shadow: -0.2px 0 8px 0;
+
+  --mainfont: "NanumSquare";
+  --englishfont: "Inter";
+  --programsubtittle: "NanumGothic";
+
+  --general-lineheight: 1.4;
+  --program-tittle-shadow: 0 1px 0.5px;
+  --normal-lineheight: normal;
+  --general-letter-spacing: 0.5px;
+  --main-font-size: 16px;
+  --footer-text: 20px;
+  --font-weight: normal;
+}
+
