@@ -20,11 +20,11 @@ span {font-size: 28px; line-height: 38px; font-weight: 300;}
 a {display: block;}
 a i {display: inline-block; margin-left: 5px;}
 
-#wrapper {overflow: hidden; background-image: url(../img/main_background_colo.png);}
+#wrapper {overflow: hidden; background-image: url(../img/main_background_color.png);}
 
 /* header */
 #header {position: relative; max-width: 1440px; width: 95%; height: auto; margin: 0 auto;}
-#header .header_wrapper {padding: 48px 0;}
+#header .header_wrapper {padding: 48px 0; line-height: 30px;}
 #header .header_wrapper .logo {display: inline-block;}
 #header .header_wrapper .logo a {display: block;}
 #header .header_wrapper .logo a img {width: 110px;}

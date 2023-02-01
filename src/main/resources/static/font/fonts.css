@@ -19,9 +19,9 @@
 @font-face {
   font-family: Inter;
   src: local(Inter-SemiBold),
-    url(/path/to/Inter-SemiBold.woff2) format("woff2"),
-    url(/path/to/Inter-SemiBold.woff) format("woff"),
-    url(/path/to/Inter-SemiBold.ttf) format("truetype");
+    url(/font/Inter-SemiBold.woff2) format("woff2"),
+    url(/font/Inter-SemiBold.woff) format("woff"),
+    url(/font/Inter-SemiBold.ttf) format("truetype");
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -30,9 +30,9 @@
 @font-face {
   font-family: Inter;
   src: local(Inter-Bold),
-    url(/path/to/Inter-Bold.woff2) format("woff2"),
-    url(/path/to/Inter-Bold.woff) format("woff"),
-    url(/path/to/Inter-Bold.ttf) format("truetype");
+    url(/font/Inter-Bold.woff2) format("woff2"),
+    url(/font/Inter-Bold.woff) format("woff"),
+    url(/font/Inter-Bold.ttf) format("truetype");
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -41,21 +41,10 @@
 @font-face {
   font-family: Inter;
   src: local(Inter-Black),
-    url(/path/to/Inter-Black.woff2) format("woff2"),
-    url(/path/to/Inter-Black.woff) format("woff"),
-    url(/path/to/Inter-Black.ttf) format("truetype");
+    url(/font/Inter-Black.woff2) format("woff2"),
+    url(/font/Inter-Black.woff) format("woff"),
+    url(/font/Inter-Black.ttf) format("truetype");
   font-weight: 900;
-  font-style: normal;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: NanumGothic;
-  src: local(NanumGothic-ExtraBold),
-    url(/path/to/NanumGothic-ExtraBold.woff2) format("woff2"),
-    url(/path/to/NanumGothic-ExtraBold.woff) format("woff"),
-    url(/path/to/NanumGothic-ExtraBold.ttf) format("truetype");
-  font-weight: 800;
   font-style: normal;
   font-stretch: normal;
 }
@@ -63,9 +52,9 @@
 @font-face {
   font-family: NanumSquare;
   src: local(NanumSquare-Regular),
-    url(/path/to/NanumSquare-Regular.woff2) format("woff2"),
-    url(/path/to/NanumSquare-Regular.woff) format("woff"),
-    url(/path/to/NanumSquare-Regular.ttf) format("truetype");
+    url(/font/NanumSquare-Regular.woff2) format("woff2"),
+    url(/font/NanumSquare-Regular.woff) format("woff"),
+    url(/font/NanumSquare-Regular.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -74,9 +63,9 @@
 @font-face {
   font-family: NanumSquare;
   src: local(NanumSquare-Bold),
-    url(/path/to/NanumSquare-Bold.woff2) format("woff2"),
-    url(/path/to/NanumSquare-Bold.woff) format("woff"),
-    url(/path/to/NanumSquare-Bold.ttf) format("truetype");
+    url(/font/NanumSquare-Bold.woff2) format("woff2"),
+    url(/font/NanumSquare-Bold.woff) format("woff"),
+    url(/font/NanumSquare-Bold.ttf) format("truetype");
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -85,9 +74,9 @@
 @font-face {
   font-family: NanumSquare;
   src: local(NanumSquare-ExtraBold),
-    url(/path/to/NanumSquare-ExtraBold.woff2) format("woff2"),
-    url(/path/to/NanumSquare-ExtraBold.woff) format("woff"),
-    url(/path/to/NanumSquare-ExtraBold.ttf) format("truetype");
+    url(/font/NanumSquare-ExtraBold.woff2) format("woff2"),
+    url(/font/NanumSquare-ExtraBold.woff) format("woff"),
+    url(/font/NanumSquare-ExtraBold.ttf) format("truetype");
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;

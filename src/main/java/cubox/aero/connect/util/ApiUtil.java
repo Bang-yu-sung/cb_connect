@@ -17,7 +17,7 @@ public class ApiUtil {
 
     private static ApiUtil instance;
 
-    private static String KFACE_API_URL = "http://172.16.153.54:5770";
+    private static String KFACE_API_URL = "https://mfa-server.k-faceid.com";
 
     static {
         instance = new ApiUtil();
