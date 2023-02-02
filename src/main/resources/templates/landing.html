@@ -1,435 +1,440 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/font/fonts.css">
-    <link rel="stylesheet" media="all and (min-width: 987px)"
-          href="/css/style.css?type=1">
-
-    <title>CUBOX</title>
-
-    <script src="/js/jquery-3.4.1.min.js"></script>
-
-    <!-- <link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css"/> -->
-
-    <script>
-
-        $(function () {
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/font/fonts.css">
+<link rel="stylesheet" media="screen and (min-width: 987px)"
+		href="/css/style.css?type=1">
 
 
-        });
+<title>CUBOX</title>
 
-        function slide(id) {
-            var offset = $("#" + id).offset();
-            $('html, body').animate({scrollTop: (offset.top - 150)}, 400);
-        }
+<script src="/js/jquery-3.4.1.min.js"></script>
 
-        function confirmCst() {
-            if (validate()) {
-                $.ajax({
-                    type: "POST",
-                    url: "/landing/confirmCst",
-                    data: {
-                        customerName: $("#customer_name").val(),
-                        companyRegistration: $("#company_registration").val(),
-                        managerEmail: $("#manager_email").val(),
-                        managerName: $("#manager_name").val(),
-                        managerPosition: $("#manager_position").val(),
-                        managerContactNumber: $("#manager_contact_number").val(),
-                        companyRegistration: $("#company_registration").val(),
-                        remark: $("#remark").val()
-                    },
-                    success: function (result) {
-                        if (result.code == 200) {
-                            alert(result.body);
-                            if(result.body == '등록 요청되었습니다.'){
-                                popupClose();
-                            }
-                        }
+<!-- <link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css"/> -->
 
-                    },
-                    error: function (result) {
-                        console.log(result);
-                        alert("통신 중 에러가 발생하였습니다.");
-                    }
+<script>
 
-                });
-            }
+	$(function () {
 
-        }
 
-        function validate() {
+	});
 
-            if (!document.querySelector("#personal_data").checked) {
-                alert("개인정보 수집 및 이용에 동의하셔야 신청이 가능합니다.");
-                return;
-            }
+	function slide(id) {
+			var offset = $("#" + id).offset();
+			$('html, body').animate({scrollTop: (offset.top - 150)}, 400);
+	}
 
-            if ($.trim($("#customer_name").val()).length < 1) {
-                alert("업체이름을 입력하세요.");
-                return;
-            }
+	function confirmCst() {
+			if (validate()) {
+					$.ajax({
+							type: "POST",
+							url: "/landing/confirmCst",
+							data: {
+									customerName: $("#customer_name").val(),
+									companyRegistration: $("#company_registration").val(),
+									managerEmail: $("#manager_email").val(),
+									managerName: $("#manager_name").val(),
+									managerPosition: $("#manager_position").val(),
+									managerContactNumber: $("#manager_contact_number").val(),
+									companyRegistration: $("#company_registration").val(),
+									remark: $("#remark").val()
+							},
+							success: function (result) {
+									if (result.code == 200) {
+											alert(result.body);
+											if(result.body == '등록 요청되었습니다.'){
+													popupClose();
+											}
+									}
 
-            if ($.trim($("#customer_name").val()).length > 30) {
-                alert("업체이름은 30자 이상 입력할 수 없습니다.");
-                return;
-            }
+							},
+							error: function (result) {
+									console.log(result);
+									alert("통신 중 에러가 발생하였습니다.");
+							}
 
-            if ($("#manager_email").val().length < 1) {
-                alert("관리자 이메일을 입력하세요.");
-                return;
-            }
+					});
+			}
 
-            if (!/^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test($("#manager_email").val())) {
-                alert("유효하지 않은 관리자 이메일 형식입니다.");
-                return;
-            }
+	}
 
-            if ($.trim($("#manager_name").val()).length < 1) {
-                alert("관리자이름을 입력하세요.");
-                return;
-            }
+	function validate() {
 
-            if ($.trim($("#manager_name").val()).length > 30) {
-                alert("관리자이름은 30자 이상 입력할 수 없습니다.");
-                return;
-            }
+			if (!document.querySelector("#personal_data").checked) {
+					alert("개인정보 수집 및 이용에 동의하셔야 신청이 가능합니다.");
+					return;
+			}
 
-            if ($("#manager_contact_number").val().length < 1) {
-                alert("관리자 연락처를 입력하세요.");
-                return;
-            }
+			if ($.trim($("#customer_name").val()).length < 1) {
+					alert("업체이름을 입력하세요.");
+					return;
+			}
 
-            if (!/^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/.test($("#manager_contact_number").val())) {
-                alert("유효하지 않은 관리자 연락처 형식입니다.");
-                return;
-            }
+			if ($.trim($("#customer_name").val()).length > 30) {
+					alert("업체이름은 30자 이상 입력할 수 없습니다.");
+					return;
+			}
 
-            return true;
-        }
+			if ($("#manager_email").val().length < 1) {
+					alert("관리자 이메일을 입력하세요.");
+					return;
+			}
 
-        function popupOpen() {
+			if (!/^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test($("#manager_email").val())) {
+					alert("유효하지 않은 관리자 이메일 형식입니다.");
+					return;
+			}
 
-            // 초기화
+			if ($.trim($("#manager_name").val()).length < 1) {
+					alert("관리자이름을 입력하세요.");
+					return;
+			}
 
-            document.querySelector("#personal_data").checked = false;
-            $("#customer_name").val("");
-            $("#company_registration").val("");
-            $("#manager_email").val("");
-            $("#manager_name").val("");
-            $("#manager_position").val("");
-            $("#manager_contact_number").val("");
-            $("#company_registration").val("");
-            $("#remark").val("");
+			if ($.trim($("#manager_name").val()).length > 30) {
+					alert("관리자이름은 30자 이상 입력할 수 없습니다.");
+					return;
+			}
 
-            $("#popup").show();
-        }
+			if ($("#manager_contact_number").val().length < 1) {
+					alert("관리자 연락처를 입력하세요.");
+					return;
+			}
 
-        function popupClose() {
-            $("#popup").hide();
-        }
+			if (!/^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/.test($("#manager_contact_number").val())) {
+					alert("유효하지 않은 관리자 연락처 형식입니다.");
+					return;
+			}
 
-    </script>
+			return true;
+	}
+
+	function popupOpen() {
+
+			// 초기화
+
+			document.querySelector("#personal_data").checked = false;
+			$("#customer_name").val("");
+			$("#company_registration").val("");
+			$("#manager_email").val("");
+			$("#manager_name").val("");
+			$("#manager_position").val("");
+			$("#manager_contact_number").val("");
+			$("#company_registration").val("");
+			$("#remark").val("");
+
+			$("#popup").show();
+	}
+
+	function popupClose() {
+			$("#popup").hide();
+	}
+
+</script>
 </head>
 <body>
 
 <div id="wrapper">
 
-    <header id="header">
-        <div class="header_wrapper">
+<header id="header">
+	<div class="header_wrapper">
 
-            <h1 class="logo">
-                <a href="#"><img src="img/cubox_logo.png" alt="Cubox"></a>
-            </h1>
+			<h1 class="logo">
+					<a href="#"><img src="img/cubox_logo.png" alt="Cubox"></a>
+			</h1>
 
-            <div class="gnb">
-                <ul>
-                    <li class="nav_bar"><a href="javascript:slide('k-face-id')">K-Face ID</a></li>
-                    <li class="nav_bar"><a href="javascript:slide('k-facelive')">K-FaceLive</a></li>
-                    <li class="nav_bar"><a href="javascript:slide('k-face-itracker')">K-Face iTracker</a></li>
-                    <li class="nav_bar"><a href="javascript:slide('k-face-pay')">K-Face Pay</a></li>
-                    <li class="nav_bar"><a href="javascript:slide('k-face-realid')">K-Face RealiD</a></li>
-                    <li class="nav_bar"><a href="javascript:popupOpen()">신청하기</a></li>
-                </ul>
-            </div>
+			<div class="gnb">
+					<ul>
+							<li class="nav_bar"><a href="javascript:slide('k-face-id')">K-Face ID</a></li>
+							<li class="nav_bar"><a href="javascript:slide('k-facelive')">K-FaceLive</a></li>
+							<li class="nav_bar"><a href="javascript:slide('k-face-itracker')">K-Face iTracker</a></li>
+							<li class="nav_bar"><a href="javascript:slide('k-face-pay')">K-Face Pay</a></li>
+							<li class="nav_bar"><a href="javascript:slide('k-face-realid')">K-Face RealiD</a></li>
+							<li class="nav_bar sign_btn"><a href="javascript:popupOpen()">신청하기</a></li>
+					</ul>
+			</div>
 
-        </div>
-    </header>
+	</div>
+</header>
 
-    <main id="main">
+<main id="main">
 
-        <!-- <aside class="btn">
-            <div class="signup">
-                <p class="btn_sign_up">신청하기</p>
-            </div>
-        </aside> -->
+	<aside class="btn">
+		<div id="header">
+			<a href="#main">
+				<img src="img/scroll_up_btn.png" alt="">
+			</a>
+		</div>
+	</aside>
 
-        <section class="landing_page">
-            <div class="main_visual full_background">
-                <div class="main_visual_text">
-                    <h2 class="header_text">인증이 필요한 모든 곳에</h2>
-                    <h3 class="openconnect_logo"><img src="img/openconnect_logo.png" alt=""></h3>
-                    <p class="main_sub_header">안면 인증 서비스 통해 안전하고 편리하게 로그인, 결제, 접근 제어 등을 이용하세요.</p>
-                </div>
-                <div class="main_visual_image"><img src="img/main_visual.png" alt=""></div>
-            </div>
-        </section>
-
-
-        <section class="sub_page">
-            <div class="full_background">
-                <p class="sub_tittle">생체인증 서비스</p>
-                <ul class="content">
-                    <li class="left_content">
-                        <h3 class="intro_tittle">쉽게 구현되는 편리한 API</h3>
-                    </li>
-                    <li class="right_content">
-                        <p class="paragraph_text">Restful API 서비스로 제공되는 OpenConnect 서비스는 기존 애플리케이션 인프라에 쉽게 통합됩니다.
-                            <br><br> OpenConnect 서비스를 사용하면 표준 프로토콜을 사용하여 빠르게 통합할 수 있으며, 모바일 앱을 위한 SDK를 이용하여 모바일 앱 과도 통합할
-                            수 있습니다.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="programs">
-            <div class="full_background">
-                <ul id="k-face-id" class="program01 program_content">
-                    <li class="text_content">
-                        <p class="program_sub_tittle">K-Face ID</p>
-                        <h3 class="tittle">최고의 얼굴 인식 서비스</h3>
-                        <p class="intro_text">최고의 얼굴 인식 서비스인 K-Face ID로 비즈니스를 혁신하십시오</p>
-                        <p class="program_text">당사의 AI기반 얼굴인식 기술은 개인을 <b>빠르고 정확하게 식별하고 보안 프로세스를 간소화하며</b> 높은 보안능력을 제공할 수
-                            있습니다.</p>
-                        <div class="comment_background">
-                            <p class="comment_text">액세스 제어, 은행 계좌 개설, 금융 거래 또는 기타 응용 프로그램에서 K-Face ID는 얼굴 인식 요구에 대한 최고의
-                                솔루션을 제공합니다.</p>
-                        </div>
-                    </li>
-                    <li class="visual_content">
-                        <div class="image k_face">
-                            <img src="img/03.1_visual.png" alt="">
-                        </div>
-                    </li>
-                </ul>
-
-                <ul id="k-facelive" class="program02 program_content">
-                    <li class="visual_content">
-                        <div class="image k_face">
-                            <img src="img/03.2_visual.png" alt="">
-                        </div>
-                    </li>
-                    <li class="text_content">
-                        <p class="program_sub_tittle">K-FaceLive</p>
-                        <h3 class="tittle">감지 및 얼굴 인식 솔루션</h3>
-                        <p class="intro_text">업계를 선도하는 라이브니스 감지 기술인 K-FaceLive로 보안과 정확성을 높이십시오.</p>
-                        <p class="program_text">당사의 첨단 기술은 최신 AI 알고리즘을 사용하여 RGB 카메라만으로 <b>녹화 및 프린트된 얼굴을 감지하여 차단하고 정상적인
-                            실제 사용자를 확인합니다.</b></p>
-                    </li>
-                </ul>
+	<section class="landing_page">
+			<div class="main_visual full_background">
+					<div class="main_visual_text">
+							<h2 class="header_text">인증이 필요한 모든 곳에</h2>
+							<h3 class="openconnect_logo"><img src="img/openconnect_logo.png" alt=""></h3>
+							<p class="main_sub_header">안면 인증 서비스 통해 안전하고 편리하게 로그인, 결제, 접근 제어 등을 이용하세요.</p>
+					</div>
+					<div class="main_visual_image"><img src="img/main_visual.png" alt=""></div>
+			</div>
+	</section>
 
 
-                <ul id="k-face-itracker" class="program03 program_content">
-                    <li class="text_content">
-                        <p class="program_sub_tittle">K-Face iTracker (FaceOn)</p>
-                        <h3 class="tittle">안면인식 원격근무 인증 서비스</h3>
-                        <p class="intro_text">안면인식 원격근무 인증 서비스인 K-Face iTracker로 안전하게 원격근무자를 인증관리하세요.</p>
-                        <p class="program_text">CUBOX의 AI기반 첨단 기술은 원격근무자의 신원과 얼굴을 실시간으로 확인하여 회사 리소스에 대한 승인된 액세스만
-                            허용합니다.</p>
-                    </li>
+	<section class="sub_page">
+			<div class="full_background">
+				<div class="content_box">
+					<p class="sub_tittle">생체인증 서비스</p>
+					<ul class="content">
+							<li class="left_content">
+									<h3 class="intro_tittle">쉽게 구현되는 편리한 API</h3>
+							</li>
+							<li class="right_content">
+									<p class="paragraph_text">Restful API 서비스로 제공되는 OpenConnect 서비스는 기존 애플리케이션 인프라에 쉽게 통합됩니다.
+											<br><br> OpenConnect 서비스를 사용하면 표준 프로토콜을 사용하여 빠르게 통합할 수 있으며, 모바일 앱을 위한 SDK를 이용하여 모바일 앱 과도 통합할
+											수 있습니다.</p>
+							</li>
+					</ul>
+				</div>
+			</div>
+	</section>
 
-                    <li class="visual_content">
-                        <div class="image k_face">
-                            <img src="img/03.3_visual.png" alt="">
-                        </div>
-                    </li>
-                </ul>
+	<section class="programs">
+			<div class="full_background">
+					<ul id="k-face-id" class="program01 program_content">
+							<li class="text_content">
+									<p class="program_sub_tittle">K-Face ID</p>
+									<h3 class="tittle">최고의 얼굴 인식 서비스</h3>
+									<p class="intro_text">최고의 얼굴 인식 서비스인 K-Face ID로 비즈니스를 혁신하십시오</p>
+									<p class="program_text">당사의 AI기반 얼굴인식 기술은 개인을 <b>빠르고 정확하게 식별하고 보안 프로세스를 간소화하며</b> 높은 보안능력을 제공할 수
+											있습니다.</p>
+									<div class="comment_background">
+											<p class="comment_text">액세스 제어, 은행 계좌 개설, 금융 거래 또는 기타 응용 프로그램에서 K-Face ID는 얼굴 인식 요구에 대한 최고의
+													솔루션을 제공합니다.</p>
+									</div>
+							</li>
+							<li class="visual_content">
+									<div class="image k_face">
+											<img src="img/03.1_visual.png" alt="">
+									</div>
+							</li>
+					</ul>
 
-            </div>
-        </section>
-
-        <section class="sub_page sub_page01">
-            <div class="full_background">
-                <p class="sub_intro">AI기반 첨단 기술은 업계 최고의 라이브니스 감지 및 안면 인식 알고리즘을 사용하여 귀하의 신원을 빠르고 정확하게 확인하여 귀하의 계정과 장치에 쉽고
-                    안전하게 액세스할 수 있는 방법을 제공합니다.</p>
-            </div>
-        </section>
-
-        <section class="programs">
-            <div class="full_background">
-                <ul id="k-face-pay" class="program04 program_content">
-                    <li class="text_content">
-                        <p class="program_sub_tittle">K-Face Pay</p>
-                        <h3 class="tittle">간편 안면인증 결제 서비스</h3>
-                        <p class="intro_text">간편 안면 인증 결제 서비스인 K-Face Pay로 안전하고 쉽게 결제하세요.</p>
-                        <p class="program_text">CUBOX의 AI기반 첨단 기술은 안면인증을 통한 승인된 거래를 보장합니다. </p>
-                        <div class="comment_background">
-                            <p class="comment_text">결제를위헤서 이제 더 이상 비밀번호를 입력하거나 지갑과 카드를 찾을 필요가 없습니다.</p>
-                        </div>
-                    </li>
-
-                    <li class="visual_content">
-                        <div class="image k_face">
-                            <img src="img/04.1_visual.png" alt="">
-                        </div>
-                    </li>
-                </ul>
-
-                <ul id="k-face-realid" class="program05 program_content">
-                    <li class="visual_content">
-                        <div class="image k_face last_program">
-                            <img src="img/realid.png" alt="">
-                        </div>
-                    </li>
-                    <li class="text_content">
-                        <p class="program_sub_tittle">K-Face RealiD</p>
-                        <h3 class="tittle">안면 인식 기반 <br> 신분증 확인 서비스</h3>
-                        <p class="intro_text">안면 인식 기반 신분증 확인 서비스인 K-Face RealiD로 안전하고 신뢰할 수 있는 신원 확인을 보장합니다.</p>
-                        <p class="program_text">CUBOX의 AI기반 첨단 기술은 신분증의 전본여부를 실시간으로 확인하고 검증된 신분증의 얼굴 사진과 인증자의 라이브얼굴의 특징을
-                            정확하게 비교하여 위변조를 차단합니다.</p>
-                        <div class="comment_background">
-                            <p class="comment_text">본인의 라이브사진과 신분증 사진의 비교를 통한 신분증 검증기술로, 신원 증명에 사용됩니다.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="signup_page">
-            <div class="full_background">
-                <p class="apply">씨유박스 서비스는 고급 암호화 및 생체 인식 보안 조치를 사용하여 귀하의 개인 정보를 보호하고 귀하만이 귀하의 계정에 액세스할 수 있도록 하는 매우 안전한
-                    서비스입니다.</p>
-                <p class="apply_link_text"><a href="javascript:popupOpen()">신청하기</a></p>
-            </div>
-        </section>
-
-        <section class="safety_page">
-            <div class="full_background">
-                <ul>
-                    <li class="text_content">
-                        <p class="safety_text">지금 얼굴 인증 서비스로 오래되고 안전하지 않은 인증 방법에 만족하지 마십시오. 업그레이드하고 안전하고 편리한 액세스의 힘을
-                            경험하십시오.</p>
-                    </li>
-                    <li class="safety_visual">
-                        <div class="safety_logo">
-                            <img src="img/safetylogo.png" alt="">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="popup" class="popup">
-            <div class="close">
-                <img src="img/close_btn.png" alt="">
-            </div>
-
-            <div class="inner-wrap">
-                <ul class="popup_intro">
-                    <li class="tittle">
-                        <h3 class="signup_text">신청하기</h3>
-                    </li>
-                    <li class="popup_sub">
-                        <p class="pop_sub_intro">인증이 필요한 모든곳 에 <b>OpenConnect</b></p>
-                    </li>
-                </ul>
-
-                <p class="pop_paragraph">오래되고 안전하지 않은 인증 방법에 만족하지 마십시오. 지금 얼굴 인증 서비스로 업그레이드하고 안전하고 편리한 액세스의 힘을
-                    경험하십시오.</p>
-                <p class="emphasis_text">필수 항목입니다</p>
-
-                <form action="#">
-                    <ul class="form first_row">
-                        <li class="col-1">
-                            <label class="forum_text imp" for="customer_name">업체이름</label>
-                            <input type="text" id="customer_name">
-                        </li>
-                        <li class="col-2">
-                            <label class="forum_text" for="company_registration">사업자등록번호</label>
-                            <input type="text" id="company_registration">
-                        </li>
-                    </ul>
-
-                    <ul class="form second_row">
-                        <li class="col-1">
-                            <label class="forum_text imp" for="manager_name">관리자이름</label>
-                            <input type="text" id="manager_name">
-                        </li>
-                        <li class="col-2">
-                            <label class="forum_text" for="manager_position">관리자 직급</label>
-                            <input type="text" id="manager_position">
-                        </li>
-                    </ul>
-
-                    <ul class="form third_row">
-                        <li class="col-1">
-                            <label class="forum_text imp" for="manager_contact_number">관리자 연락처</label>
-                            <input type="text" id="manager_contact_number">
-                        </li>
-                        <li class="col-2">
-                            <label class="forum_text imp" for="manager_email">관리자 이메일</label>
-                            <input type="text" id="manager_email">
-                        </li>
-                    </ul>
-
-                    <ul class="form fourth_row">
-                        <li class="col-0">
-                            <label class="forum_text" for="remark">요청사항</label>
-                            <input type="text" id="remark">
-                        </li>
-                    </ul>
-
-                    <ul class="personal">
-                        <li class="col-3">
-                            <input type="checkbox" id="personal_data" class="data">
-                            <label class="forum_text check_box" for="personal_data">개인정보 수집 및 이용에 동의합니다.</label>
-                        </li>
-                    </ul>
-
-                    <input type="submit" value="신청하기" class="submit_btn" onclick="confirmCst()">
-                    <input type="submit" value="닫기" class="submit_btn" onclick="popupClose()">
+					<ul id="k-facelive" class="program02 program_content">
+							<li class="visual_content">
+									<div class="image k_face">
+											<img src="img/03.2_visual.png" alt="">
+									</div>
+							</li>
+							<li class="text_content">
+									<p class="program_sub_tittle">K-FaceLive</p>
+									<h3 class="tittle">감지 및 얼굴 인식 솔루션</h3>
+									<p class="intro_text">업계를 선도하는 라이브니스 감지 기술인 K-FaceLive로 보안과 정확성을 높이십시오.</p>
+									<p class="program_text">당사의 첨단 기술은 최신 AI 알고리즘을 사용하여 RGB 카메라만으로 <b>녹화 및 프린트된 얼굴을 감지하여 차단하고 정상적인
+											실제 사용자를 확인합니다.</b></p>
+							</li>
+					</ul>
 
 
-                </form>
+					<ul id="k-face-itracker" class="program03 program_content">
+							<li class="text_content">
+									<p class="program_sub_tittle">K-Face iTracker (FaceOn)</p>
+									<h3 class="tittle">안면인식 원격근무 인증 서비스</h3>
+									<p class="intro_text">안면인식 원격근무 인증 서비스인 K-Face iTracker로 안전하게 원격근무자를 인증관리하세요.</p>
+									<p class="program_text">CUBOX의 AI기반 첨단 기술은 원격근무자의 신원과 얼굴을 실시간으로 확인하여 회사 리소스에 대한 승인된 액세스만
+											허용합니다.</p>
+							</li>
 
-            </div>
+							<li class="visual_content">
+									<div class="image k_face">
+											<img src="img/03.3_visual.png" alt="">
+									</div>
+							</li>
+					</ul>
 
-        </section>
+			</div>
+	</section>
 
-    </main>
+	<section class="sub_page sub_page01">
+			<div class="full_background">
+					<p class="sub_intro">AI기반 첨단 기술은 업계 최고의 라이브니스 감지 및 안면 인식 알고리즘을 사용하여 귀하의 신원을 빠르고 정확하게 확인하여 귀하의 계정과 장치에 쉽고
+							안전하게 액세스할 수 있는 방법을 제공합니다.</p>
+			</div>
+	</section>
 
-    <footer>
-        <section class="footer">
-            <div class="full_background">
-                <div class="footer_logo">
-                    <img src="img/footer_logo.png" alt="Cubox">
-                </div>
-                <ul class="footer_content">
-                    <li class="left_text footer_sub_text">
-                        <ul class="upper_info">
-                            <li><p class="footer_bold">(주)씨유박스</p></li>
-                            <li><p class="boss">대표: 남운성</p></li>
-                        </ul>
-                        <p class="company_num">사업자 등록번호: 120-87-55358</p>
-                        <p class="address">주소: 서울특별시 강남구 테헤란로 22길 12 (역삼동, 펑방빌딩)</p>
-                    </li>
+	<section class="programs">
+			<div class="full_background">
+					<ul id="k-face-pay" class="program04 program_content">
+							<li class="text_content">
+									<p class="program_sub_tittle">K-Face Pay</p>
+									<h3 class="tittle">간편 안면인증 결제 서비스</h3>
+									<p class="intro_text">간편 안면 인증 결제 서비스인 K-Face Pay로 안전하고 쉽게 결제하세요.</p>
+									<p class="program_text">CUBOX의 AI기반 첨단 기술은 안면인증을 통한 승인된 거래를 보장합니다. </p>
+									<div class="comment_background">
+											<p class="comment_text">결제를위헤서 이제 더 이상 비밀번호를 입력하거나 지갑과 카드를 찾을 필요가 없습니다.</p>
+									</div>
+							</li>
 
-                    <li class="middle">
-                        <p class="footer_link_text">
-                            <a href="#">www.cubox.ai</a>
-                        </p>
-                    </li>
+							<li class="visual_content">
+									<div class="image k_face">
+											<img src="img/04.1_visual.png" alt="">
+									</div>
+							</li>
+					</ul>
 
-                    <li class="right_text">
-                        <h4 class="footer_tittle">AI TECHNOLOGY IS KEY TO THE FUTURE</h4>
-                        <p class="footer_phrase">모두가 편리하고 안전한 세상은 CUBOX가 만듭니다.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </footer>
+					<ul id="k-face-realid" class="program05 program_content">
+							<li class="visual_content">
+									<div class="image k_face last_program">
+											<img src="img/realid.png" alt="">
+									</div>
+							</li>
+							<li class="text_content">
+									<p class="program_sub_tittle">K-Face RealiD</p>
+									<h3 class="tittle">안면 인식 기반 <br> 신분증 확인 서비스</h3>
+									<p class="intro_text">안면 인식 기반 신분증 확인 서비스인 K-Face RealiD로 안전하고 신뢰할 수 있는 신원 확인을 보장합니다.</p>
+									<p class="program_text">CUBOX의 AI기반 첨단 기술은 신분증의 전본여부를 실시간으로 확인하고 검증된 신분증의 얼굴 사진과 인증자의 라이브얼굴의 특징을
+											정확하게 비교하여 위변조를 차단합니다.</p>
+									<div class="comment_background">
+											<p class="comment_text">본인의 라이브사진과 신분증 사진의 비교를 통한 신분증 검증기술로, 신원 증명에 사용됩니다.</p>
+									</div>
+							</li>
+					</ul>
+			</div>
+	</section>
+
+	<section class="signup_page">
+			<div class="full_background">
+					<p class="apply">씨유박스 서비스는 고급 암호화 및 생체 인식 보안 조치를 사용하여 귀하의 개인 정보를 보호하고 귀하만이 귀하의 계정에 액세스할 수 있도록 하는 매우 안전한
+							서비스입니다.</p>
+					<p class="apply_link_text"><a href="javascript:popupOpen()">신청하기</a></p>
+			</div>
+	</section>
+
+	<section class="safety_page">
+			<div class="full_background">
+					<ul>
+							<li class="text_content">
+									<p class="safety_text">지금 얼굴 인증 서비스로 오래되고 안전하지 않은 인증 방법에 만족하지 마십시오. 업그레이드하고 안전하고 편리한 액세스의 힘을
+											경험하십시오.</p>
+							</li>
+							<li class="safety_visual">
+									<div class="safety_logo">
+											<img src="img/safetylogo.png" alt="">
+									</div>
+							</li>
+					</ul>
+			</div>
+	</section>
+
+	<section id="popup" class="popup">
+			<div class="close">
+					<img src="img/close_btn.png" alt="">
+			</div>
+
+			<div class="inner-wrap">
+					<ul class="popup_intro">
+							<li class="tittle">
+									<h3 class="signup_text">신청하기</h3>
+							</li>
+							<li class="popup_sub">
+									<p class="pop_sub_intro">인증이 필요한 모든곳 에 <b>OpenConnect</b></p>
+							</li>
+					</ul>
+
+					<p class="pop_paragraph">오래되고 안전하지 않은 인증 방법에 만족하지 마십시오. 지금 얼굴 인증 서비스로 업그레이드하고 안전하고 편리한 액세스의 힘을
+							경험하십시오.</p>
+					<p class="emphasis_text">필수 항목입니다</p>
+
+					<form action="#">
+							<ul class="form first_row">
+									<li class="col-1">
+											<label class="forum_text imp" for="customer_name">업체이름</label>
+											<input type="text" id="customer_name">
+									</li>
+									<li class="col-2">
+											<label class="forum_text" for="company_registration">사업자등록번호</label>
+											<input type="text" id="company_registration">
+									</li>
+							</ul>
+
+							<ul class="form second_row">
+									<li class="col-1">
+											<label class="forum_text imp" for="manager_name">관리자이름</label>
+											<input type="text" id="manager_name">
+									</li>
+									<li class="col-2">
+											<label class="forum_text" for="manager_position">관리자 직급</label>
+											<input type="text" id="manager_position">
+									</li>
+							</ul>
+
+							<ul class="form third_row">
+									<li class="col-1">
+											<label class="forum_text imp" for="manager_contact_number">관리자 연락처</label>
+											<input type="text" id="manager_contact_number">
+									</li>
+									<li class="col-2">
+											<label class="forum_text imp" for="manager_email">관리자 이메일</label>
+											<input type="text" id="manager_email">
+									</li>
+							</ul>
+
+							<ul class="form fourth_row">
+									<li class="col-0">
+											<label class="forum_text" for="remark">요청사항</label>
+											<input type="text" id="remark">
+									</li>
+							</ul>
+
+							<ul class="personal">
+									<li class="col-3">
+											<input type="checkbox" id="personal_data" class="data">
+											<label class="forum_text check_box" for="personal_data">개인정보 수집 및 이용에 동의합니다.</label>
+									</li>
+							</ul>
+
+							<input type="submit" value="신청하기" class="submit_btn" onclick="confirmCst()">
+							<input type="submit" value="닫기" class="submit_btn" onclick="popupClose()">
+
+
+					</form>
+
+			</div>
+
+	</section>
+
+</main>
+
+<footer>
+	<section class="footer">
+			<div class="full_background">
+					<div class="footer_logo">
+							<img src="img/footer_logo.png" alt="Cubox">
+					</div>
+					<ul class="footer_content">
+							<li class="left_text footer_sub_text">
+									<ul class="upper_info">
+											<li><p class="footer_bold">(주)씨유박스</p></li>
+											<li><p class="boss">대표: 남운성</p></li>
+									</ul>
+									<p class="company_num">사업자 등록번호: 120-87-55358</p>
+									<p class="address">주소: 서울특별시 강남구 테헤란로 22길 12 (역삼동, 펑방빌딩)</p>
+							</li>
+
+							<li class="middle">
+									<p class="footer_link_text">
+											<a href="#">www.cubox.ai</a>
+									</p>
+							</li>
+
+							<li class="right_text">
+									<h4 class="footer_tittle">AI TECHNOLOGY IS KEY TO THE FUTURE</h4>
+									<p class="footer_phrase">모두가 편리하고 안전한 세상은 CUBOX가 만듭니다.</p>
+							</li>
+					</ul>
+			</div>
+	</section>
+</footer>
 </div>
 
 </body>

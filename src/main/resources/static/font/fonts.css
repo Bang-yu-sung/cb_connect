@@ -50,6 +50,17 @@
 }
 
 @font-face {
+  font-family: NanumGothic;
+  src: local(NanumGothic-ExtraBold),
+  url(/font/NanumGothic-ExtraBold.woff2) format("woff2"),
+  url(/font/NanumGothic-ExtraBold.woff) format("woff"),
+  url(/font/NanumGothic-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
   font-family: NanumSquare;
   src: local(NanumSquare-Regular),
     url(/font/NanumSquare-Regular.woff2) format("woff2"),
@@ -112,7 +123,7 @@
 }
 
 .signup_text {
-  font-size: 43px;
+  font-size: 35px;
   font-weight: 800;
   letter-spacing: -0.43px;
 }
@@ -198,7 +209,7 @@
 }
 
 .forum_text {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .emphasis_text {

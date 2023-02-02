@@ -21,28 +21,34 @@ a {display: block;}
 a i {display: inline-block; margin-left: 5px;}
 
 #wrapper {overflow: hidden; background-image: url(../img/main_background_color.png);}
+.content_box {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
 
 /* header */
 #header {position: relative; max-width: 1440px; width: 95%; height: auto; margin: 0 auto;}
 #header .header_wrapper {padding: 48px 0; line-height: 30px;}
-#header .header_wrapper .logo {display: inline-block;}
+#header .header_wrapper .logo {display: inline-block; line-height: 30px;}
 #header .header_wrapper .logo a {display: block;}
 #header .header_wrapper .logo a img {width: 110px;}
 
 .gnb {display: inline-block; float: right;}
-.gnb ul {display: flex;}
-.gnb ul li {flex-direction: row;}
-.gnb ul li + li {margin-left: 86px;}
-
+.gnb ul {display: flex; align-items: center; line-height: 15px;}
+.gnb ul li {flex-direction: row; letter-spacing: var(--letter-spacing);}
+.gnb ul li:hover {color: #1d8eaa;}
+.gnb ul li + li {margin-left: 60px;}
+.gnb ul li.sign_btn {padding: 10px 20px; background-color: #1d8eaa; border-radius: 20px; color: #ffff;}
+.gnb ul li.sign_btn:hover {background-color: #ffff; color: #1d8eaa;}
 
 /* module */
 .full_background {max-width: 1234px; width: 80%; margin: 0 auto;}
 
-aside.btn {position: fixed; z-index: 999;}
-aside.btn div.signup {padding: 30px 60px; background-color: var(--signupbtn); border-radius: 50px; color: var(--color); right: 0;}
+aside.btn {position: fixed; z-index: 999; width: 100%; top: 82%;}
+aside.btn a {width: 100%; text-align: right;}
+aside.btn a img {width: 60px;}
+/* aside.btn div.scroll_up {text-align: right; background-color: pink;} */
 
-section.landing_page .main_visual {position: relative;}
-section.landing_page .main_visual_text {display: inline-block; margin-top: 169px;}
+
+section.landing_page .main_visual {position: absolute;}
+section.landing_page .main_visual_text {display: inline-block; margin-top: 110px;}
 section.landing_page .main_visual_text h3 {margin-top: -15px;}
 section.landing_page .main_visual_text p {width: 400px; margin-top: 56px;}
 section.landing_page .main_visual_image {margin-bottom: 71px; text-align: right;}
@@ -50,7 +56,6 @@ section.landing_page .main_visual_image img {width: 700px; height: 600px;}
 
 section.sub_page {background-color: var(--subbackground); height: 626px; position: relative;}
 section.sub_page01 {height: 500px; position: relative;}
-section.sub_page > .full_background {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 section.sub_page ul.content {display: flex; margin-top: 22px; flex-direction: row;}
 section.sub_page ul.content li.left_content {width: 30%;}
 section.sub_page ul.content li.right_content {width: 50%; margin-left: 15%;}
@@ -102,21 +107,21 @@ section.footer li.right_text p {margin-top: 25px;}
 
 
 /* popup window */
-section.popup div.inner-wrap {max-width: 1234px; width: 90%; margin: 0 auto;  padding: 150px 50px 50px;}
+section.popup div.inner-wrap {max-width: 700px; width: 90%; margin: 0 auto; padding-bottom: 20px;}
 
-section.popup {display: none; position: fixed; background-color: var(--color); z-index: 999; top: 42%; left: 50%; transform: translate(-50%, -50%); margin: 0 auto;}
+section.popup {display: none; position: fixed; background-color: var(--color); border: 0.5px solid #1d8eaa; z-index: 999; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0 auto;}
 section.popup ul {display: flex; align-items: flex-end;}
 section.popup ul li.popup_sub {margin-left: 40px;}
-section.popup p.pop_paragraph {margin: 50px 0; width: 58%;}
-section.popup p.emphasis_text {text-align: right; position: relative;}
-section.popup p.emphasis_text::before {position: absolute; content: ''; width: 10px; height: 10px; background-color: var(--circle); border-radius: 50px; top: 50%; transform: translate(0, -50%); right: 118px;}
+section.popup p.pop_paragraph {margin: 35px 0; width: 70%; font-size: 14px;}
+section.popup p.emphasis_text {text-align: right; position: relative; font-size: 14px;}
+section.popup p.emphasis_text::before {position: absolute; content: ''; width: 6px; height: 6px; background-color: var(--circle); border-radius: 50px; top: 50%; transform: translate(0, -50%); right: 97px;}
 
 section.popup  ul.form {display: flex; flex-direction: row;}
-section.popup  ul.form li {margin: 15px 0;}
+section.popup  ul.form li {margin: 8px 0;}
 section.popup  ul.form li:last-child {margin-left: 66px;}
 section.popup  ul.form li label {position: relative;}
 section.popup  ul.form li label.imp::after {position: absolute; content: ''; width: 6px; height: 6px; background-color: var(--circle); border-radius: 50px; right: -10px;}
-section.popup  ul.form input {border-radius: 10px; height: 54px; border: none; background-color: var(--forumbox); margin-top: 8px; width: 100%;}
+section.popup  ul.form input {border-radius: 10px; height: 40px; border: none; background-color: var(--forumbox); margin-top: 8px; width: 100%;}
 
 
 section.popup  ul li.col-0 {width: 100%; margin-left: 0 !important;}
@@ -125,7 +130,7 @@ section.popup  ul li.col-1 {width: 353px;}
 section.popup  ul li.col-2 {width: 555px; }
 section.popup  ul li.col-3 {margin: 0 !important;}
 
-section.popup div.close {text-align: right; margin: 30px 30px 0 0;}
+section.popup div.close {text-align: right; margin: 20px 30px 0 0;}
 input.close_btn {border-radius: 50px; height: 50px; width: 50px; border: none; background-color: var(--circle);}
 input.data {width: 20px; height: 20px; border: none; margin-right: 10px; box-sizing: border-box;}
-input.submit_btn {background-color: var(--signupbtn); border: none; padding: 15px 29px; margin-top: 30px; border-radius: 10px; color: var(--color);}
+input.submit_btn {background-color: var(--signupbtn); border: none; padding: 15px 29px; margin-top: 22px; border-radius: 10px; color: var(--color);}
