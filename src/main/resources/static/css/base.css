@@ -11,6 +11,9 @@
   --footer: #002d35;
   --signupbtn: #1d8eaa;
   --circle:  #1d8eaa;
+  --hover_btn: #1d8eaa;
+  --hover_background: #ffff;
+  
 
   --comment-box-shadow: -0.2px 0 8px 0;
 
@@ -21,9 +24,11 @@
   --general-lineheight: 1.4;
   --program-tittle-shadow: 0 1px 0.5px;
   --normal-lineheight: normal;
-  --general-letter-spacing: 0.5px;
+  --general-letter-spacing: -0.1px;
+  --letter-spacing: 0px;
   --main-font-size: 16px;
-  --footer-text: 20px;
+  --footer-text: 18px;
+  --header-text: 16px;
   --font-weight: normal;
 }
 

@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+@import url('/css/base.css');
+
+
+/* reset */
+html {-webkit-text-size-adjust: none; text-size-adjust: none;}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, p, ul, ol {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 300;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+i[class^="fa"] {position: relative; display: inline-block; vertical-align: middle;}
+i[class^="fa"] span {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: var(--mainfont); font-size: var(--main-font-size); font-weight: var(--font-weight); color: var(--maincolor); line-height: var(--general-lineheight); font-style: normal; letter-spacing: var(--general-letter-spacing);}
+span {font-size: 28px; line-height: 38px; font-weight: 300;}
+a {display: block;}
+a i {display: inline-block; margin-left: 5px;}
+
+#wrapper {overflow: hidden; background-image: url(../img/main_background_color.png);}
+.full_background {position: relative; max-width: 987px; width: 80%; margin: 0 auto; height: 100%;}
+.content_box {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%;}
+
+/* header */
+#header {position: relative; max-width: 987px; width: 95%; height: auto; margin: 0 auto; z-index: 999;}
+#header .header_wrapper {padding: 48px 0; background-color: hotpink;}
+#header .header_wrapper .logo {display: inline-block; line-height: 30px; background-color: pink;}
+#header .header_wrapper .logo a {display: block;}
+#header .header_wrapper .logo a img {width: 95px;}
+
+.gnb ul {background-color: pink; display: inline-block; float: right; position: relative;}
+.gnb ul li.nav_bar {display: none;}
+.gnb ul li.sign_btn {padding: 10px 20px; background-color: var(--hover_btn); border-radius: 20px; color: var(--hover_background);}
