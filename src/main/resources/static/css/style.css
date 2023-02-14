@@ -25,11 +25,11 @@ a i {display: inline-block; margin-left: 5px;}
 .content_box {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%;}
 
 /* header */
-#header {position: relative; max-width: 1440px; width: 95%; height: auto; margin: 0 auto; z-index: 999;}
-#header .header_wrapper {padding: 48px 0; line-height: 30px;}
-#header .header_wrapper .logo {display: inline-block; line-height: 30px;}
-#header .header_wrapper .logo a {display: block;}
-#header .header_wrapper .logo a img {width: 110px;}
+.header {position: relative; max-width: 1440px; width: 95%; height: auto; margin: 0 auto; z-index: 999;}
+.header .header_wrapper {padding: 48px 0; line-height: 30px;}
+.header .header_wrapper .logo {display: inline-block; line-height: 30px;}
+.header .header_wrapper .logo a {display: block;}
+.header .header_wrapper .logo a img {width: 110px;}
 
 .gnb {display: inline-block; float: right;}
 .gnb ul {display: flex; align-items: center; line-height: 15px;}
@@ -109,7 +109,7 @@ section.footer li.right_text p {margin-top: 25px;}
 
 
 /* popup window */
-section.popup div.inner-wrap {max-width: 700px; width: 90%; margin: 0 auto; padding-bottom: 20px;}
+section.popup div.inner-wrap {position: relative; max-width: 700px; width: 90%; margin: 0 auto; padding-bottom: 20px;}
 
 section.popup {display: none; position: fixed; background-color: var(--color); border: 0.5px solid #1d8eaa; z-index: 999; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0 auto;}
 section.popup ul {display: flex; align-items: flex-end;}
@@ -118,23 +118,26 @@ section.popup p.pop_paragraph {margin: 20px 0; width: 77%; font-size: 14px;}
 section.popup p.emphasis_text {text-align: right; position: relative; font-size: 14px;}
 section.popup p.emphasis_text::before {position: absolute; content: ''; width: 6px; height: 6px; background-color: var(--circle); border-radius: 50px; top: 50%; transform: translate(0, -50%); right: 97px;}
 
-section.popup  ul.form {display: flex; flex-direction: row;}
+section.popup  ul.form {display: flex; flex-direction: row; text-align: left;}
 section.popup  ul.form li {margin: 8px 0;}
-section.popup  ul.form li:last-child {margin-left: 66px;}
+section.popup  ul.form li:last-child {margin-left: 40px;}
 section.popup  ul.form li label {position: relative;}
 section.popup  ul.form li label.imp::after {position: absolute; content: ''; width: 6px; height: 6px; background-color: var(--circle); border-radius: 50px; right: -10px;}
-section.popup  ul.form input {border-radius: 10px; height: 40px; border: none; background-color: var(--forumbox); margin-top: 8px; width: 100%;}
+section.popup  ul.form input {border-radius: 10px; height: 40px; border: none; background-color: var(--forumbox); margin-top: 8px; width: 95%; padding-left: 10px;}
 
 
 section.popup  ul li.col-0 {width: 100%; margin-left: 0 !important;}
 section.popup  ul li.col-0 input {height: 129px;}
-section.popup  ul li.col-1 {width: 353px;}
-section.popup  ul li.col-2 {width: 555px; }
+section.popup  ul li.col-1 {width: 250px;}
+section.popup  ul li.col-2 {width: 400px; }
 section.popup  ul li.col-3 {margin: 0 !important;}
+textarea {width: 98%; height: 150px; resize: none; border-radius: 10px; height: 100px; border: none; background-color: var(--forumbox); padding: 15px 0 0 10px; font-family: var(--main_font);}
 
 section.popup div.close {text-align: right; margin: 20px 30px 0 0;}
+section.popup div.close:hover {cursor: pointer;}
+
 input.close_btn {border-radius: 50px; height: 50px; width: 50px; border: none; background-color: var(--circle);}
 input.data {width: 20px; height: 20px; border: none; margin-right: 10px; box-sizing: border-box;}
 input.submit_btn {background-color: var(--signupbtn); border: none; box-sizing: border-box; padding: 15px 29px; margin-top: 22px; border-radius: 10px; color: var(--color);}
+input.submit_btn:hover {color: var(--hover_btn); background-color: var(--hover_background); border: 0.5px solid #1d8eaa; box-sizing: border-box; cursor: pointer;}
 
-input.submit_btn:hover {color: var(--hover_btn); background-color: var(--hover_background); border: 0.5px solid #1d8eaa; box-sizing: border-box;}

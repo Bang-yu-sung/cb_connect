@@ -28,11 +28,6 @@
 
         });
 
-        function scrollToTop(){
-            var offset = $("#main").offset();
-            $('html, body').animate({scrollTop: offset.top}, 400);
-        }
-
         function slide(id) {
             var offset = $("#" + id).offset();
             $('html, body').animate({scrollTop: (offset.top - 150)}, 400);
@@ -56,7 +51,7 @@
                     success: function (result) {
                         if (result.code == 200) {
                             alert(result.body);
-                            if (result.body == '등록 요청되었습니다.') {
+                            if(result.body == '등록 요청되었습니다.'){
                                 popupClose();
                             }
                         }
@@ -149,7 +144,7 @@
 
 <div id="wrapper">
 
-    <header id="header">
+    <header class="header">
         <div class="header_wrapper">
             <h1 class="logo">
                 <a href="#"><img src="img/cubox_logo.png" alt="Cubox"></a>
@@ -171,8 +166,8 @@
     <main id="main">
 
         <aside class="btn">
-            <div id="header">
-                <a href="javascript:scrollToTop()">
+            <div class="header">
+                <a href="#main">
                     <img src="img/scroll_up_btn.png" alt="">
                 </a>
             </div>
@@ -206,8 +201,7 @@
                         </li>
                         <li class="right_content">
                             <p class="paragraph_text">Restful API 서비스로 제공되는 OpenConnect 서비스는 기존 애플리케이션 인프라에 쉽게 통합됩니다.
-                                <br><br> OpenConnect 서비스를 사용하면 표준 프로토콜을 사용하여 빠르게 통합할 수 있으며, 모바일 앱을 위한 SDK를 이용하여 모바일 앱 과도
-                                통합할
+                                <br><br> OpenConnect 서비스를 사용하면 표준 프로토콜을 사용하여 빠르게 통합할 수 있으며, 모바일 앱을 위한 SDK를 이용하여 모바일 앱 과도 통합할
                                 수 있습니다.</p>
                         </li>
                     </ul>
@@ -274,8 +268,7 @@
         <section class="sub_page sub_page01">
             <div class="full_background">
                 <div class="content_box">
-                    <p class="sub_intro">AI기반 첨단 기술은 업계 최고의 라이브니스 감지 및 안면 인식 알고리즘을 사용하여 귀하의 신원을 빠르고 정확하게 확인하여 귀하의 계정과
-                        장치에 쉽고
+                    <p class="sub_intro">AI기반 첨단 기술은 업계 최고의 라이브니스 감지 및 안면 인식 알고리즘을 사용하여 귀하의 신원을 빠르고 정확하게 확인하여 귀하의 계정과 장치에 쉽고
                         안전하게 액세스할 수 있는 방법을 제공합니다.</p>
                 </div>
             </div>
@@ -347,7 +340,7 @@
 
         <section id="popup" class="popup">
             <div class="close">
-                <img id="popupClose" src="img/close_btn.png" style="cursor: pointer;" alt="">
+                <img id="popupClose" src="img/close_btn.png" alt="">
             </div>
 
             <div class="inner-wrap">
@@ -401,7 +394,7 @@
                     <ul class="form fourth_row">
                         <li class="col-0">
                             <label class="forum_text" for="remark">요청사항</label>
-                            <input type="text" id="remark">
+                            <textarea class="forum_text" id="remark"></textarea>
                         </li>
                     </ul>
 
