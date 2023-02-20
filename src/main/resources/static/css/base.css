@@ -1,18 +1,22 @@
  :root {
-  --subbackground: #F4F9FA;
+  --subbackground: #e6eaef;
   --maincolor: #2d2d2d;
-  --subtittle: #1d8eaa;
-  --commentbox: #81989C;
-  --forumbox: #e4ecee;
+  --intro_color: #ffff;
+  --subtittle: #3D5B89;
+  --subpage_color: #2a3366;
+  --commentbox: #3D5B89;
+  --forumbox: #e6eaef;
   --color: #ffff;
   --programtext: #767676;
-  --signup-background: #1b474f;
-  --safety-background: #113c43;
-  --footer: #002d35;
-  --signupbtn: #1d8eaa;
-  --circle:  #1d8eaa;
-  --hover_btn: #1d8eaa;
-  --hover_background: #ffff;
+  --subpage_text_color: #76818f;
+  --signup-background: #304E7C;
+  --safety-background: #3D5B89;
+  --footer: #000B42;
+  --signupbtn: #223990;
+  --circle:  #172C86;
+  --hover_btn: #172C86;
+  --hover_background: #172C86;
+  --hover_btn_text: #ffff;
   
 
   --comment-box-shadow: -0.2px 0 8px 0;
@@ -29,6 +33,7 @@
   --main-font-size: 16px;
   --footer-text: 18px;
   --header-text: 16px;
+  --header-text-mobile: 12px;
   --font-weight: normal;
 }
 

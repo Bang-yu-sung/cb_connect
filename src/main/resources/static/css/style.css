@@ -20,24 +20,24 @@ span {font-size: 28px; line-height: 38px; font-weight: 300;}
 a {display: block;}
 a i {display: inline-block; margin-left: 5px;}
 
-#wrapper {overflow: hidden; background-image: url(../img/main_background_color.png);}
+#wrapper {overflow: hidden;}
 .full_background {position: relative; max-width: 1234px; width: 80%; margin: 0 auto; height: 100%;}
 .content_box {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%;}
 
 /* header */
-.header {position: relative; max-width: 1440px; width: 95%; height: auto; margin: 0 auto; z-index: 999;}
+.header {position: relative; max-width: 1440px; width: 95%; height: auto; margin: 0 auto; z-index: 999; }
 .header .header_wrapper {padding: 48px 0; line-height: 30px;}
 .header .header_wrapper .logo {display: inline-block; line-height: 30px;}
 .header .header_wrapper .logo a {display: block;}
 .header .header_wrapper .logo a img {width: 110px;}
 
 .gnb {display: inline-block; float: right;}
-.gnb ul {display: flex; align-items: center; line-height: 15px;}
+.gnb ul {display: flex; align-items: center; line-height: 15px; color: var(--intro_color);}
 .gnb ul li {flex-direction: row; letter-spacing: var(--letter-spacing);}
 .gnb ul li:hover {color: var(--hover_btn);}
 .gnb ul li + li {margin-left: 48px;}
-.gnb ul li.sign_btn {padding: 10px 20px; background-color: #1d8eaa; border-radius: 20px; color: var(--color);}
-.gnb ul li.sign_btn:hover {background-color: var(--hover_background); color: var(--hover_btn);}
+.gnb ul li.sign_btn {padding: 10px 20px; background-color: #ffff; border-radius: 20px; color: #172C86;}
+.gnb ul li.sign_btn:hover {background-color: var(--hover_background); color: var(--hover_btn_text);}
 
 /* module */
 
@@ -46,14 +46,16 @@ aside.btn a {width: 100%; text-align: right;}
 aside.btn a img {width: 60px;}
 /* aside.btn div.scroll_up {text-align: right; background-color: pink;} */
 
-section.landing_page {position: relative; height: 100vh; margin-top: -131px;}
+section.landing_page {position: relative; height: 100vh; margin-top: -131px; color: var(--intro_color); background: rgb(176,195,203);
+    background: linear-gradient(165deg, rgba(176,195,203,1) 0%, rgba(53,71,145,1) 100%);}
+
 section.landing_page .full_background {position: relative; height: 100%;}
 section.landing_page .main_visual .landing_wrapper {position: absolute; display: flex; width: 100%; justify-content: space-between; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
 section.landing_page .main_visual_text {margin-top: 14%;}
 section.landing_page .main_visual_text h3 {margin-top: -13px;}
 section.landing_page .main_visual_text p {width: 400px; margin-top: 56px;}
-section.landing_page .visual_container {margin-top: 57%; width: 605px;}
+section.landing_page .visual_container {margin-top: 80%; width: 450px;}
 section.landing_page .visual_container img {width: 100%; height: 100%;}
 
 section.sub_page {background-color: var(--subbackground); height: 626px; position: relative;}
@@ -141,3 +143,25 @@ input.data {width: 20px; height: 20px; border: none; margin-right: 10px; box-siz
 input.submit_btn {background-color: var(--signupbtn); border: none; box-sizing: border-box; padding: 15px 29px; margin-top: 22px; border-radius: 10px; color: var(--color);}
 input.submit_btn:hover {color: var(--hover_btn); background-color: var(--hover_background); border: 0.5px solid #1d8eaa; box-sizing: border-box; cursor: pointer;}
 
+.mobile_only {display: none;}
+
+
+/* @media only all and (min-width:1025px) {
+    header {width: 100%; height: 80px; left: 0px; top: 0px ; z-index: 99; }
+    header.large  {width: 100%;height: 80px;  float: left; position: fixed; left: 0px; top: 0px ;}
+    header.small  {width: 100%; height: 80px; float: left; position: fixed; left: 0px; top: 0px ; }
+    
+    header  .header{width: 100%;  height:80px;  float: left;   display: flex;  justify-content: center;  align-items: center;  border-bottom: 1px solid #eee} */
+    }
+    /**** pc2 ****/
+    /* @media all and (max-width:1280px) and (min-width:1025px) {
+    } */
+    /**** 모바일 ****/
+    /* @media only all and (max-width:1024px) {
+    header {width: 100%; height: 60px;  float: left; position: fixed; left: 0px; top: 0px ; z-index: 99;   box-shadow:3px 3px 30px rgba(42,58,130,0.1); }
+    header  .header{width: 100%;  height:60px;  float: left;   display: flex;  justify-content: center;  align-items: center;  border-bottom: 1px solid #eee}
+    
+    } */
+
+
+    /**** pc2 ****/

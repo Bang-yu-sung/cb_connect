@@ -18,8 +18,13 @@ public class ViewController {
     }
 
     @RequestMapping({"/landing"})
-    public String memberRegister() {
+    public String landing() {
         return "landing";
+    }
+
+    @RequestMapping({"/dev"})
+    public String dev() {
+        return "dev";
     }
 
 }

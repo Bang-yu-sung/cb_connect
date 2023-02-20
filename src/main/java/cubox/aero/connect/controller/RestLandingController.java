@@ -37,7 +37,7 @@ public class RestLandingController {
 
         JSONObject cstJson = new JSONObject();
         cstJson.put("customerName", customerName);
-        cstJson.put("companyRegistration", companyRegistration);
+        cstJson.put("companyRegistrationNumber", companyRegistration);
         cstJson.put("managerEmail", managerEmail);
         cstJson.put("managerName", managerName);
         cstJson.put("managerPosition", managerPosition);
