@@ -140,8 +140,8 @@ section.popup div.close:hover {cursor: pointer;}
 
 input.close_btn {border-radius: 50px; height: 50px; width: 50px; border: none; background-color: var(--circle);}
 input.data {width: 20px; height: 20px; border: none; margin-right: 10px; box-sizing: border-box;}
-input.submit_btn {background-color: var(--signupbtn); border: none; box-sizing: border-box; padding: 15px 29px; margin-top: 22px; border-radius: 10px; color: var(--color);}
-input.submit_btn:hover {color: var(--hover_btn); background-color: var(--hover_background); border: 0.5px solid #1d8eaa; box-sizing: border-box; cursor: pointer;}
+button.submit_btn {background-color: var(--signupbtn); border: none; box-sizing: border-box; padding: 15px 29px; margin-top: 22px; border-radius: 10px; color: var(--color);}
+button.submit_btn:hover {color: var(--hover_btn); background-color: var(--subbackground); border: 0.5px solid #172C86; box-sizing: border-box; cursor: pointer;}
 
 .mobile_only {display: none;}
 
@@ -152,7 +152,6 @@ input.submit_btn:hover {color: var(--hover_btn); background-color: var(--hover_b
     header.small  {width: 100%; height: 80px; float: left; position: fixed; left: 0px; top: 0px ; }
     
     header  .header{width: 100%;  height:80px;  float: left;   display: flex;  justify-content: center;  align-items: center;  border-bottom: 1px solid #eee} */
-    }
     /**** pc2 ****/
     /* @media all and (max-width:1280px) and (min-width:1025px) {
     } */
